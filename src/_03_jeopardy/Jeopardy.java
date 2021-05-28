@@ -59,11 +59,11 @@ public class Jeopardy implements ActionListener {
 		// 4. Add the header component to the quizPanel
 			quizPanel.add(header);
 		// 5. Add the quizPanel to the frame
-			
+			frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-
+			firstButton = createButton("");
 		// 7. Add the firstButton to the quizPanel
-
+			
 		// 8. Write the code to complete the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
 			
