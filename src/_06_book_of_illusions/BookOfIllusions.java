@@ -20,7 +20,10 @@ public class BookOfIllusions extends MouseAdapter {
 	
 	// 1. Make a JFrame variable and initialize it using "new JFrame()"
 	JFrame frame = new JFrame();
-	int number = 1;
+	JLabel label;
+	int numberOfTimesClicked = 1;
+	String illusionTwo;
+	String illusionOne;
 	public void run() {
 		// 2. make the frame visible
 			frame.setVisible(true);
@@ -28,10 +31,10 @@ public class BookOfIllusions extends MouseAdapter {
 			frame.setSize(700, 500);
 		// 4. find 2 images and save them to your project’s _06_book_of_illusions folder
 		// 5. make a variable to hold the location of your image. e.g. "illusion.jpg"
-			String illusionOne = "1.jpeg";
-			String illusionTwo = "2.jpeg";
+			illusionOne = "1.jpeg";
+			illusionTwo = "2.jpeg";
 		// 6. create a variable of type "JLabel" but don’t initialize it yet
-			JLabel label;
+			
 		// 7. use the "loadImage..." methods below to initialize your JLabel
 			label = loadImageFromComputer(illusionOne);
 		// 8. add your JLabel to the frame
@@ -46,12 +49,19 @@ public class BookOfIllusions extends MouseAdapter {
 		// 11. Print "clicked!" to the console when the mouse is pressed
 		System.out.println("Clicked");
 		// 12. remove everything from the frame that was added earlier
-		frame.removeAll();
+		frame.remove(label);
 		// 13. load a new image like before (this is more than one line of code)
 		
-		//USE VARIUBLE NUMBER TO DECIDE WHAT ILLUSION IS NOT CURRENTLY THERE
-		number+=1;
+		if(numberOfTimesClicked%2 == 0) {
+			label = loadImageFromComputer(illusionTwo);
+		} else {
+			label = loadImageFromComputer(illusionOne);
+		}
+		
+		frame.add(label);
+		numberOfTimesClicked+=1;
 		// 14. pack the frame
+		frame.pack();
 	}
 
 	// [OPTIONAL] 15. goad your users with some annoying or witty pop-ups
