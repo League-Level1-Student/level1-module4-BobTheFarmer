@@ -73,14 +73,13 @@ public class Calculator implements ActionListener {
 		if(num1.getText() == null || num2.getText() == null) {
 			label.setText("ERROR");
 		} else if(e.getSource() == add) {
-			label.setText(String.valueOf(add(Double.parseDouble(num1.getText(), Double.parseDouble(num2.getText())))));
-			//WORK ON THIS AND COPY AND PASTE INTO OTHER OPERATORS
+			label.setText("Answer: " + String.valueOf(add(Double.parseDouble(num1.getText()), Double.parseDouble(num2.getText()))));
 		} else if(e.getSource() == sub) {
-			
+			label.setText("Answer: " + String.valueOf(sub(Double.parseDouble(num1.getText()), Double.parseDouble(num2.getText()))));
 		} else if(e.getSource() == mul) {
-			
+			label.setText("Answer: " + String.valueOf(mul(Double.parseDouble(num1.getText()), Double.parseDouble(num2.getText()))));
 		} else {
-			
+			label.setText("Answer: " + div(Double.parseDouble(num1.getText()), Double.parseDouble(num2.getText())));
 		}
 		
 	}
